@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+  <% if(locals.result){ %>
+    
+    <% for(var i=0 ; i<result.length ; i++) {%>
+      <form action="/all" method="POST">
+      <div class="user-list" >
+        <div class="user-card">
+          <input type="text" name="fetche" value="<%= result[i].email %>" />
+          <img src=<%= result[i].img %> alt="John Doe">
+          <h3><%= result[i].fname + " " %> <%= result[i].lname %></h3>
+          <p class="email"><%= result[i].email %></p>
+          <p class="batch"><%= result[i].batch %></p>
+          <p class="branch"><%= result[i].branch%></p>
+          <button type="submit" class="btn btn-dark">Chat</button>
+        </div>
+      </form>
+    
+    <% } %>
+ 
+  <% } %>
+
+  
+ 
+  <script>
+    
+</script>
+
+  <%- include('partials/header') %>

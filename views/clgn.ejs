@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+  <div class="container mt-5">
+    <h1>Join With ID </h1>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
+
+            <!-- Makes POST request to /register route -->
+            <form action="/creg" method="POST">
+              
+              <div class="form-group">
+                <label for="password">Enter College ID</label>
+                <input type="password" class="form-control" name="ciid">
+              </div>
+              <button type="submit" class="btn btn-dark">Join By ID</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <%- include('partials/header') %>

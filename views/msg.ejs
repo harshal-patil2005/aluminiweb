@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation Window</title>
+    <link rel="stylesheet" href="./css/msg.css">
+</head>
+<body>
+     <form action="/msg" method="POST">
+          <div class="conversation-window">
+               <div class="message-log" id="messageLog">
+                   <% for(var i=0 ; i< dt.length ; i++) { %>
+
+                    <% if(dt[i].sender === SE) { %>
+                    <P class=".snd" style="text-align: right;"><%= dt[i].msg %></P>
+                    <br>
+                    <% } else if(dt[i].sender === RE) {%>
+                    <P class=".rev" style="text-align: left;"><%= dt[i].msg %></P>
+                    <br>
+                    <% } %>
+
+                    <% } %>
+
+               </div>
+               <div class="message-input">
+                   <textarea id="messageText" placeholder="type here.." name="msg"></textarea>
+                   <button id="sendButton" type="submit"> Send </button>
+               </div>
+           </div>
+     </form>
+    
+
+    <!-- <script>
+        document.getElementById('sendButton').addEventListener('click', function() {
+            const messageText = document.getElementById('messageText').value;
+            if (messageText.trim()) {
+                const messageLog = document.getElementById('messageLog');
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('message', 'sent');
+                newMessage.innerHTML = `<p>${messageText}</p>`;
+                messageLog.appendChild(newMessage);
+                document.getElementById('messageText').value = ''; // Clear the textarea
+                messageLog.scrollTop = messageLog.scrollHeight; // Scroll to the bottom
+            }
+        });
+    </script> -->
+</body>
+</html>
